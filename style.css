@@ -1,0 +1,122 @@
+/*======================================
+Theme Name: 하나몬
+Theme URI: https://parkhana.com
+Description: 하나몬(https://parkhana.com) 사이트를 위한 디비 자식 테마입니다.
+Version: 1.0
+Author: 하나몬
+Author URI: https://parkhana.com
+Template: Divi
+======================================*/
+
+/*------------------------- 크로스 브라우징 IE -------------------------*/
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.et_animated { opacity:1 !important; }
+}
+
+/*------------------------- 폰트 ------------------------------*/
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-black.woff2') format('woff2'),
+         url('fonts/notosanskr-black.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-bold.woff2') format('woff2'),
+         url('fonts/notosanskr-bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-medium.woff2') format('woff2'),
+         url('fonts/notosanskr-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-regular.woff2') format('woff2'),
+         url('fonts/notosanskr-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-demilight.woff2') format('woff2'),
+         url('fonts/notosanskr-demilight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-light.woff2') format('woff2'),
+         url('fonts/notosanskr-light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'notokr';
+    src: url('fonts/notosanskr-thin.woff2') format('woff2'),
+         url('fonts/notosanskr-thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/*------------------------- 초기화 -------------------------*/
+* { word-break:keep-all; font-family:'notokr'; }
+html,body { font-family:'notokr' !important; }
+h1,h2,h3,h4,h5,h6 { font-family:'notokr' !important; }
+p,ul,li,div { font-family:'notokr' !important; }
+i,em,address { font-style:normal; }
+strong { font-weight:600; }
+
+#page-container { overflow:hidden; }
+#page-container>div>header        { z-index:2; }
+#page-container>div>#et-main-area { z-index:1; }
+#page-container>div>#et-main-area #main-content { z-index:2; }
+#page-container>div>#et-main-area footer        { z-index:1; }
+
+#page-container input,
+#page-container label,
+#page-container select,
+#page-container textarea { font-family:'notokr' !important; }
+
+a[aria-current] { color:#0381f4 !important; }
+
+#page-container>div>#et-main-area a { font-family:'notokr' !important; }
+
+/* 블로그 페이지 */
+.et_pb_post.post img { box-shadow:0 0 10px 0 rgba(0,0,0,0.2); }
+
+/*------------------------- 에드클레스 -------------------------*/
+.floatclear:after { display:block; content:''; clear:both; }
+.hidden { display:none !important; }
+
+.mobile-nav-hidden .et_pb_menu__menu   { display:block !important; }
+.mobile-nav-hidden .et_mobile_nav_menu { display:none  !important; }
+
+br.br-980 { display:none; }
+br.br-767 { display:none; }
+
+.myMenuClass { padding:0 !important; list-style:none !important; }
+.myMenuClass .sub-menu { padding:0 !important; list-style:none !important; }
+
+/*------------------------- 헤더 -------------------------*/
+
+/*------------------------- 서브 -------------------------*/
+
+/*------------------------- 반응형(플러그인 커스텀 제외) -------------------------*/
+@media all and ( max-width:980px ){
+	.hidden-980 { display:none !important; }
+	.hidden.block-980 { display:block !important; }
+	br.br-980 { display:block; }
+}
+@media all and ( max-width:767px ){
+	.hidden-767 { display:none !important; }
+	.hidden.block-767 { display:block !important; }
+	br.br-767 { display:block; }
+}
+
+/*------------------------- The End -------------------------*/
