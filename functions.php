@@ -104,3 +104,41 @@
 	}
 
 ?>
+
+<?php // 카테고리 카운트 숏코드
+
+	/* 카테고리 카운트 */
+	add_action('template_redirect', 'category_count');
+	function category_count(){		
+		global $wp_query;
+		global $current_count;
+		
+		$current_object = $wp_query->queried_object;
+
+		if( array_key_exists('queried_object', $wp_query) ){			
+			if(  $current_object != NULL ){
+			
+				if( array_key_exists('count', $current_object) ){
+					$current_count = $wp_query->queried_object->count;
+				}
+				
+				if( array_key_exists('taxonomy', $current_object) ){
+					$current_taxonomy = $wp_query->queried_object->taxonomy;
+				}
+			
+			}	
+		}
+	}
+		
+	/* 카운트 숏코드 사용 */
+	add_shortcode('category_count', 'print_category_count');
+	function print_category_count( $atts, $content = null ) {
+		global $current_count;
+		if( $current_count == '' ){
+			return false;
+		} else {
+			return "<span class='current-count'>$current_count</span>";
+		}
+	}
+
+?>
