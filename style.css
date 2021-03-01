@@ -100,6 +100,14 @@ br.br-767 { display:none; }
 .myMenuClass { padding:0 !important; list-style:none !important; }
 .myMenuClass .sub-menu { padding:0 !important; list-style:none !important; }
 
+
+/*------------------------- 공통 -------------------------*/
+/* 검색 모듈 공통 */
+html .mobile-search-wrap { padding:0 15px; border:0; border-radius:4px; background:#e2e8f0; }
+html .mobile-search-wrap input { padding:8px 8px 8px 24px !important; line-height:180% !important; font-size:16px; color:#718096; background:url(/wp-content/uploads/2021/02/search-icon.svg) no-repeat 0 50% !important; background-size:16px !important; }
+html .mobile-search-wrap input::placeholder { font-size:16px; color:#718096; }
+html .et_pb_search.et_pb_hide_search_button input.et_pb_s { padding:8px 8px 8px 24px !important; }
+
 /*------------------------- 헤더 -------------------------*/
 /* 모바일 앱바 클릭 시 HTML 스크롤 히든 */
 html.addHtmlScroll { overflow:hidden; }
@@ -111,11 +119,6 @@ html.addHtmlScroll { overflow:hidden; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-logo-wrap { display:inline-block; vertical-align:middle; line-height:0; transition:padding 0.3s; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-logo-wrap:hover { padding-bottom:6.5px; transition:padding 0.3s; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-logo-wrap img { width:auto; height:35px; }
-/* PC : 검색 */
-.pc-header-wrap .pc-header-col-wrap .pc-header-search-wrap { padding:0 15px; border:0; border-radius:4px; background:#e2e8f0; }
-.pc-header-wrap .pc-header-col-wrap .pc-header-search-wrap input { padding:8px 8px 8px 24px !important; line-height:180% !important; font-size:16px; color:#718096; background:url(/wp-content/uploads/2021/02/search-icon.svg) no-repeat 0 50%; background-size:16px; }
-.pc-header-wrap .pc-header-col-wrap .pc-header-search-wrap input::placeholder { font-size:16px; color:#718096; }
-html .et-db #et-boc .et-l .et_pb_search_0_tb_header input.et_pb_s { padding:8px 8px 8px 24px !important; }
 /* PC : 메뉴 */
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass { text-align:right; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li { display:inline-block; margin-left:15px; }
@@ -144,6 +147,8 @@ html .et-db #et-boc .et-l .et_pb_search_0_tb_header input.et_pb_s { padding:8px 
 .mobile-side-menu-container { display:none; z-index:3 !important; position:fixed !important; margin:0 !important; width:100% !important; height:100% !important; padding:0 !important; background:none !important; }
 .mobile-side-menu-container .mobile-side-bg-wrap   { z-index:1; position:absolute; top:0; left:0; width:100% !important; height:100% !important; max-width:100%; margin:0 !important; background:rgba(0,0,0,0.8) !important; }
 .mobile-side-menu-container .mobile-side-menu-wrap { z-index:2; position:absolute; top:0; right:0; width:80% !important; height:100%; padding:0 0 50px 0 !important; background:#f9f8f6; overflow-y:scroll; }
+/* Mobile 사이드 메뉴 : 검색 */
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-search-wrap { margin:30px 30px 0 30px !important; }
 /* Mobile 사이드 메뉴 : 메인 메뉴 */
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap { padding:0 30px 10px 30px; margin-bottom:0 !important; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass { padding:0 !important; }
@@ -161,8 +166,9 @@ html .et-db #et-boc .et-l .et_pb_search_0_tb_header input.et_pb_s { padding:8px 
 /* 블로그 */
 .blog-module-wrap .column { width:calc( 33.333333% - 16px ) !important; margin-right:24px !important; }
 .blog-module-wrap .column:nth-child(3n) { margin-right:0 !important; }
-.blog-module-wrap .column article { margin-bottom:24px !important; padding:0 !important; }
-.blog-module-wrap .column article:last-child { margin-bottom:0 !important; }
+.blog-module-wrap .column article { margin-bottom:24px !important; padding:0 !important; transition:all 0.2s !important; }
+.blog-module-wrap .column article:hover { transform:translateY(-0.25rem); transition:all 0.2s; } 
+.blog-module-wrap .column article:last-child { margin-bottom:60px !important; }
 .blog-module-wrap .column article .et_pb_image_container { margin:0 !important; }
 .blog-module-wrap .column article .et_pb_image_container a { margin:0 !important; padding:10px 10px 0 10px !important; }
 .blog-module-wrap .column article .et_pb_image_container a img { border-radius:0.5rem !important; }
@@ -170,6 +176,9 @@ html .et-db #et-boc .et-l .et_pb_search_0_tb_header input.et_pb_s { padding:8px 
 .blog-module-wrap .column article p.post-meta      { padding:0 30px 0 30px !important; margin-bottom:15px; }
 .blog-module-wrap .column article div.post-content { padding:0 30px 30px 30px !important; }
 .blog-module-wrap .column article div.post-content p { word-break:break-all !important; }
+/* 블로그 : 숏커드 */
+span.current-count { display:inline-block; font-size:24px; color:#8D99FF; font-weight:600; vertical-align:middle; padding:2.5px 10px; margin-top:2.5px; border-radius:5px; background:#fff; box-shadow:0 0 5px 0 rgba(0,0,0,0.05); transition:all 0.3s; }
+span.current-count:hover { color:#fff; background:#8D99FF; transition:all 0.3s; }
 
 /*------------------------- 반응형(플러그인 커스텀 제외) -------------------------*/
 @media all and ( max-width:980px ){
@@ -192,5 +201,17 @@ html .et-db #et-boc .et-l .et_pb_search_0_tb_header input.et_pb_s { padding:8px 
 	.blog-module-wrap .column article p.post-meta      { padding:0 20px 0 20px !important; margin-bottom:10px; }
 	.blog-module-wrap .column article div.post-content { padding:0 20px 20px 20px !important; }
 }
+
+/**-----------------------------------------
+ *
+ *
+ * WP-PageNavi 플러그인 커스텀 CSS
+ *
+ *
+-----------------------------------------**/
+.wp-pagenavi { display:table; border:0; padding: 5px 2.5px; margin:60px auto 30px auto; background:#fff; border-radius:5px; }
+.wp-pagenavi a, .wp-pagenavi span { display:inline-block; margin:0 2.5px; color:#718096 !important; font-weight:500 !important; padding:5px 10px; line-height:25px; border-radius:5px; background:#E2E8F0; }
+.wp-pagenavi a:hover { color:#fff !important; background:#8D99FF; }
+.wp-pagenavi span.current { color:#fff !important; background:#718096; }
 
 /*------------------------- The End -------------------------*/
