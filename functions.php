@@ -33,24 +33,6 @@
 
 ?>
 
-<?php // 페이지에 글 태그 포함
-
-	/* 페이지에 태그 및 카테고리 지원 추가 */
-	add_action('init', 'tags_categories_support_all');
-	function tags_categories_support_all(){
-		register_taxonomy_for_object_type('post_tag', 'page');
-		//register_taxonomy_for_object_type('category', 'page');  
-	}
-	
-	/* 모든 태그와 카테고리가 검색어에 포함되었는지 확인 */
-	add_action('pre_get_posts', 'tags_categories_support_query');
-	function tags_categories_support_query($wp_query){
-		if ($wp_query->get('tag')) $wp_query->set('post_type', 'any');
-		//if ($wp_query->get('category_name')) $wp_query->set('post_type', 'any');
-	}
-	
-?>
-
 <?php // 페이지 카테고리 추가 및 필터
 		
 	/* 페이지 포스트 타입에 '페이지 카테고리' 추가 */
@@ -70,8 +52,8 @@
 	}
 	
 	/* 관리자에 사용자 지정 분류 드롭 다운 표시 */
-	add_action('restrict_manage_posts', 'post_filter_custom_post_type_by_taxonomy');
-	function post_filter_custom_post_type_by_taxonomy() {
+	add_action('restrict_manage_posts', 'page_filter_custom_post_type_by_taxonomy');
+	function page_filter_custom_post_type_by_taxonomy() {
 		global $typenow;
 		$post_type = 'page'; 			// 게시물 유형 변경
 		$taxonomy  = 'page-category'; 	// 분류법 변경
@@ -91,8 +73,8 @@
 	}
 
 	/* 관리자에서 분류별로 게시물 필터링 */
-	add_filter('parse_query', 'post_convert_id_to_term_in_query');
-	function post_convert_id_to_term_in_query($query) {
+	add_filter('parse_query', 'page_convert_id_to_term_in_query');
+	function page_convert_id_to_term_in_query($query) {
 		global $pagenow;
 		$post_type = 'page';			// 게시물 유형 변경
 		$taxonomy  = 'page-category'; 	// 분류법 변경
@@ -138,6 +120,94 @@
 			return false;
 		} else {
 			return "<span class='current-count'>$current_count</span>";
+		}
+	}
+
+?>
+
+<?php
+
+	add_action( 'init', 'add_artwork_post_type_fn' );
+
+	// 포스트 타입 생성
+	function add_artwork_post_type_fn() {
+	
+		$type_artwork_labels = array(
+			'name'               => '작품',
+			'all_items'     	 => '모든 작품',
+			'add_new'            => '작품 생성',
+			'add_new_item'       => '작품 생성',
+			'edit_item'          => '작품 수정',
+			'search_items'       => '작품 검색',
+			'not_found'          => '작품이 없습니다.',
+			'not_found_in_trash' => '휴지통에 작품이 없습니다.',
+			'menu_name' 		 => '작품',
+		);
+		$type_board_args = array(
+			'labels'        		=> $type_artwork_labels,
+			'description'   		=> '작품 데이터 보관',
+			'public'        		=> true,
+			// 'publicly_queryable'	=> true,
+			// 'hierarchical'			=> true,
+			'menu_position' 		=> 5,
+			'supports'      		=> array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+			'has_archive'   		=> true,
+			// 'show_ui'			=> false,
+			// 'show_in_menu'		=> false,
+		);
+	
+		// 포스트 타입 생성
+		register_post_type( 'artwork', $type_board_args );
+	
+	}
+	
+	/* 페이지 포스트 타입에 '페이지 카테고리' 추가 */
+	//add_action( 'init', 'custom_taxonomies_with_artwork', 0 );
+	function custom_taxonomies_with_artwork() {
+		// artwork-category
+		register_taxonomy( 'artwork-category', array( 'artwork' ), array(
+			'labels' => array(
+				'name' => '작품 카테고리',
+				'label' => '작품 카테고리',
+				'menu_name' => '카테고리',
+			),
+			'hierarchical' => true, // Default: false
+			'show_admin_column' => true, // Default: false
+			'show_in_rest' => true,
+		) );
+	}
+	
+	/* 관리자에 사용자 지정 분류 드롭 다운 표시 */
+	//add_action('restrict_manage_posts', 'artwork_filter_custom_post_type_by_taxonomy');
+	function artwork_filter_custom_post_type_by_taxonomy() {
+		global $typenow;
+		$post_type = 'artwork'; 			// 게시물 유형 변경
+		$taxonomy  = 'artwork-category'; 	// 분류법 변경
+		if ($typenow == $post_type) {
+			$selected      = isset($_GET[$taxonomy]) ? $_GET[$taxonomy] : '';
+			$info_taxonomy = get_taxonomy($taxonomy);
+			wp_dropdown_categories(array(
+				'show_option_all' => sprintf( __( '모든 %s', 'textdomain' ), $info_taxonomy->label ),
+				'taxonomy'        => $taxonomy,
+				'name'            => $taxonomy,
+				'orderby'         => 'name',
+				'selected'        => $selected,
+				'show_count'      => true,
+				'hide_empty'      => true,
+			));
+		};
+	}
+	
+	/* 관리자에서 분류별로 게시물 필터링 */
+	//add_filter('parse_query', 'artwork_convert_id_to_term_in_query');
+	function artwork_convert_id_to_term_in_query($query) {
+		global $pagenow;
+		$post_type = 'artwork';				// 게시물 유형 변경
+		$taxonomy  = 'artwork-category'; 	// 분류법 변경
+		$q_vars    = &$query->query_vars;
+		if ( $pagenow == 'edit.php' && isset($q_vars['post_type']) && $q_vars['post_type'] == $post_type && isset($q_vars[$taxonomy]) && is_numeric($q_vars[$taxonomy]) && $q_vars[$taxonomy] != 0 ) {
+			$term = get_term_by('id', $q_vars[$taxonomy], $taxonomy);
+			$q_vars[$taxonomy] = $term->slug;
 		}
 	}
 

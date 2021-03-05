@@ -103,10 +103,11 @@ br.br-767 { display:none; }
 
 /*------------------------- 공통 -------------------------*/
 /* 검색 모듈 공통 */
-html .mobile-search-wrap { padding:0 15px; border:0; border-radius:4px; background:#e2e8f0; }
-html .mobile-search-wrap input { padding:8px 8px 8px 24px !important; line-height:180% !important; font-size:16px; color:#718096; background:url(/wp-content/uploads/2021/02/search-icon.svg) no-repeat 0 50% !important; background-size:16px !important; }
-html .mobile-search-wrap input::placeholder { font-size:16px; color:#718096; }
-html .et_pb_search.et_pb_hide_search_button input.et_pb_s { padding:8px 8px 8px 24px !important; }
+html #page-container .mobile-search-wrap { padding:0 15px; border:0 !important; border-radius:4px !important; background:#e2e8f0; }
+html #page-container .mobile-search-wrap input.et_pb_s { font-family:'notokr' !important; padding:8px 8px 8px 24px !important; line-height:25px !important; vertical-align:middle; font-size:16px; color:#718096; background:url(/wp-content/uploads/2021/02/search-icon.svg) no-repeat 0 50% !important; background-size:16px !important; }
+html #page-container .mobile-search-wrap input.et_pb_s::placeholder { font-size:16px; color:#718096 !important; }
+html #page-container .et_pb_search.et_pb_hide_search_button input.et_pb_s { padding:8px 8px 8px 24px !important; }
+html .et-db #et-boc .et-l .et_pb_search.et_pb_hide_search_button input.et_pb_s { border:0; border-radius:4px; font-family:'notokr' !important; padding:8px 8px 8px 24px !important; line-height:25px !important; vertical-align:middle; font-size:16px; color:#718096; background:url(/wp-content/uploads/2021/02/search-icon.svg) no-repeat 0 50% !important; background-size:16px !important; }
 
 /*------------------------- 헤더 -------------------------*/
 /* 모바일 앱바 클릭 시 HTML 스크롤 히든 */
@@ -123,7 +124,7 @@ html.addHtmlScroll { overflow:hidden; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass { text-align:right; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li { display:inline-block; margin-left:15px; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li:first-child { margin:0; }
-.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a { display:block; font-size:16px; color:#718096; line-height:180%; font-weight:600; }
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a { display:block; font-size:16px; color:#718096 !important; line-height:180%; font-weight:600; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a:hover,
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a:focus,
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a[aria-current] { color:#5A69EB !important; }
@@ -174,11 +175,22 @@ html.addHtmlScroll { overflow:hidden; }
 .blog-module-wrap .column article .et_pb_image_container a img { border-radius:0.5rem !important; }
 .blog-module-wrap .column article h2.entry-title   { padding:30px 30px 0 30px !important; margin-bottom:15px; font-weight:600; }
 .blog-module-wrap .column article p.post-meta      { padding:0 30px 0 30px !important; margin-bottom:15px; }
+.blog-module-wrap .column article p.post-meta a:hover { color:#5A69EB !important; }
 .blog-module-wrap .column article div.post-content { padding:0 30px 30px 30px !important; }
 .blog-module-wrap .column article div.post-content p { word-break:break-all !important; }
-/* 블로그 : 숏커드 */
-span.current-count { display:inline-block; font-size:24px; color:#8D99FF; font-weight:600; vertical-align:middle; padding:2.5px 10px; margin-top:2.5px; border-radius:5px; background:#fff; box-shadow:0 0 5px 0 rgba(0,0,0,0.05); transition:all 0.3s; }
+
+/* 블로그 : 숏코드 */
+span.current-count { font-family:'notokr' !important; display:inline-block; font-size:24px; color:#8D99FF; font-weight:600; vertical-align:middle; padding:2.5px 10px; margin-top:2.5px; border-radius:5px; background:#fff; box-shadow:0 0 5px 0 rgba(0,0,0,0.05); transition:all 0.3s; }
 span.current-count:hover { color:#fff; background:#8D99FF; transition:all 0.3s; }
+
+/* 블로그 : 디비 */
+#page-container .et_pb_title_meta_container a:hover { color:#5A69EB !important; }
+#page-container .et_pb_title_featured_container img { border-radius:1rem; }
+#page-container .et_pb_widget.widget_tag_cloud { width:100% !important; margin:0 !important; }
+#page-container .et_pb_widget.widget_tag_cloud h4 { display:none; }
+#page-container .et_pb_widget.widget_tag_cloud .tagcloud a { line-height:30px; padding:0 15px; background:#e2e8f0; margin:4px; }
+#page-container .et_pb_widget.widget_tag_cloud .tagcloud a:hover,
+#page-container .et_pb_widget.widget_tag_cloud .tagcloud a:focus { color:#fff !important; background:#8D99FF; }
 
 /*------------------------- 반응형(플러그인 커스텀 제외) -------------------------*/
 @media all and ( max-width:980px ){
@@ -210,8 +222,17 @@ span.current-count:hover { color:#fff; background:#8D99FF; transition:all 0.3s; 
  *
 -----------------------------------------**/
 .wp-pagenavi { display:table; border:0; padding: 5px 2.5px; margin:60px auto 30px auto; background:#fff; border-radius:5px; }
-.wp-pagenavi a, .wp-pagenavi span { display:inline-block; margin:0 2.5px; color:#718096 !important; font-weight:500 !important; padding:5px 10px; line-height:25px; border-radius:5px; background:#E2E8F0; }
-.wp-pagenavi a:hover { color:#fff !important; background:#8D99FF; }
+.wp-pagenavi a, .wp-pagenavi span { display:inline-block; margin:0 2.5px; color:#718096 !important; font-weight:500 !important; padding:5px 10px; line-height:25px; border-radius:5px; background:#E2E8F0; transition:all 0.3s; }
+.wp-pagenavi a:hover { color:#fff !important; background:#8D99FF; transition:all 0.3s; }
 .wp-pagenavi span.current { color:#fff !important; background:#718096; }
+
+/**-----------------------------------------
+ *
+ *
+ * Enlighter - Customizable Syntax Highlighter 플러그인 커스텀 CSS
+ *
+ *
+-----------------------------------------**/
+.enlighter-default { padding:15px 0 !important; }
 
 /*------------------------- The End -------------------------*/
