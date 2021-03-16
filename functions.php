@@ -133,24 +133,24 @@
 	function add_artwork_post_type_fn() {
 	
 		$type_artwork_labels = array(
-			'name'               => '작품',
-			'all_items'     	 => '모든 작품',
-			'add_new'            => '작품 생성',
-			'add_new_item'       => '작품 생성',
-			'edit_item'          => '작품 수정',
-			'search_items'       => '작품 검색',
-			'not_found'          => '작품이 없습니다.',
-			'not_found_in_trash' => '휴지통에 작품이 없습니다.',
-			'menu_name' 		 => '작품',
+			'name'               => '작업',
+			'all_items'     	 => '모든 작업',
+			'add_new'            => '작업 생성',
+			'add_new_item'       => '작업 생성',
+			'edit_item'          => '작업 수정',
+			'search_items'       => '작업 검색',
+			'not_found'          => '작업이 없습니다.',
+			'not_found_in_trash' => '휴지통에 작업이 없습니다.',
+			'menu_name' 		 => '작업',
 		);
 		$type_board_args = array(
 			'labels'        		=> $type_artwork_labels,
-			'description'   		=> '작품 데이터 보관',
+			'description'   		=> '작업 데이터 보관',
 			'public'        		=> true,
-			// 'publicly_queryable'	=> true,
-			// 'hierarchical'			=> true,
+			'publicly_queryable'	=> true,
+			'hierarchical'			=> true,
 			'menu_position' 		=> 5,
-			'supports'      		=> array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+			'supports'      		=> array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
 			'has_archive'   		=> true,
 			// 'show_ui'			=> false,
 			// 'show_in_menu'		=> false,
@@ -162,13 +162,13 @@
 	}
 	
 	/* 페이지 포스트 타입에 '페이지 카테고리' 추가 */
-	//add_action( 'init', 'custom_taxonomies_with_artwork', 0 );
+	add_action( 'init', 'custom_taxonomies_with_artwork', 0 );
 	function custom_taxonomies_with_artwork() {
 		// artwork-category
 		register_taxonomy( 'artwork-category', array( 'artwork' ), array(
 			'labels' => array(
-				'name' => '작품 카테고리',
-				'label' => '작품 카테고리',
+				'name' => '작업 카테고리',
+				'label' => '작업 카테고리',
 				'menu_name' => '카테고리',
 			),
 			'hierarchical' => true, // Default: false
@@ -178,7 +178,7 @@
 	}
 	
 	/* 관리자에 사용자 지정 분류 드롭 다운 표시 */
-	//add_action('restrict_manage_posts', 'artwork_filter_custom_post_type_by_taxonomy');
+	add_action('restrict_manage_posts', 'artwork_filter_custom_post_type_by_taxonomy');
 	function artwork_filter_custom_post_type_by_taxonomy() {
 		global $typenow;
 		$post_type = 'artwork'; 			// 게시물 유형 변경
