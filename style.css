@@ -7,7 +7,7 @@ Author: 하나몬
 Author URI: https://parkhana.com
 Template: Divi
 ======================================*/
-/*  test */
+
 /*------------------------- 크로스 브라우징 IE -------------------------*/
 @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.et_animated { opacity:1 !important; }
