@@ -11,20 +11,20 @@
 		);
 	}
 	
-	/* Custom.js 추가 연결 */
+	// Custom.js 추가 연결
 	add_action( 'wp_enqueue_scripts', 'my_custom_scripts' );
 	function my_custom_scripts() {
 		wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ),'',true );
 	}
 	
-	/* SVG 사용 */
+	// SVG 사용
 	add_filter( 'mime_types', 'custom_upload_mimes' );
 	function custom_upload_mimes( $existing_mimes ) {
 		$existing_mimes['svg'] = 'image/svg+xml';
 		return $existing_mimes;
 	}
 
-	/* 메뉴 숏코드 사용 [menu name="menu_name"] */
+	// 메뉴 숏코드 사용 [menu name="menu_name"]
 	add_shortcode('menu', 'print_menu_shortcode');
 	function print_menu_shortcode($atts, $content = null) {
 		extract(shortcode_atts(array( 'name' => null, 'class' => null ), $atts));
@@ -34,8 +34,8 @@
 ?>
 
 <?php // 페이지 카테고리 추가 및 필터
-		
-	/* 페이지 포스트 타입에 '페이지 카테고리' 추가 */
+
+	// 페이지 포스트 타입에 '페이지 카테고리' 추가
 	add_action( 'init', 'custom_taxonomies_with_page', 0 );
 	function custom_taxonomies_with_page() {
 		// page-category
@@ -51,7 +51,7 @@
 		) );
 	}
 	
-	/* 관리자에 사용자 지정 분류 드롭 다운 표시 */
+	// 관리자에 사용자 지정 분류 드롭 다운 표시
 	add_action('restrict_manage_posts', 'page_filter_custom_post_type_by_taxonomy');
 	function page_filter_custom_post_type_by_taxonomy() {
 		global $typenow;
@@ -72,7 +72,7 @@
 		};
 	}
 
-	/* 관리자에서 분류별로 게시물 필터링 */
+	// 관리자에서 분류별로 게시물 필터링
 	add_filter('parse_query', 'page_convert_id_to_term_in_query');
 	function page_convert_id_to_term_in_query($query) {
 		global $pagenow;
@@ -89,7 +89,7 @@
 
 <?php // 카테고리 카운트 숏코드
 
-	/* 카테고리 카운트 */
+	// 카테고리 카운트
 	add_action('template_redirect', 'category_count');
 	function category_count(){		
 		global $wp_query;
@@ -112,7 +112,7 @@
 		}
 	}
 		
-	/* 카운트 숏코드 사용 */
+	// 카운트 숏코드 사용
 	add_shortcode('category_count', 'print_category_count');
 	function print_category_count( $atts, $content = null ) {
 		global $current_count;
@@ -125,11 +125,10 @@
 
 ?>
 
-<?php
-
-	add_action( 'init', 'add_artwork_post_type_fn' );
+<?php // '작업' 포스트 타입 생성
 
 	// 포스트 타입 생성
+	add_action( 'init', 'add_artwork_post_type_fn' );
 	function add_artwork_post_type_fn() {
 	
 		$type_artwork_labels = array(
@@ -161,7 +160,7 @@
 	
 	}
 	
-	/* 페이지 포스트 타입에 '페이지 카테고리' 추가 */
+	// 페이지 포스트 타입에 '페이지 카테고리' 추가
 	add_action( 'init', 'custom_taxonomies_with_artwork', 0 );
 	function custom_taxonomies_with_artwork() {
 		// artwork-category
@@ -177,7 +176,7 @@
 		) );
 	}
 	
-	/* 관리자에 사용자 지정 분류 드롭 다운 표시 */
+	// 관리자에 사용자 지정 분류 드롭 다운 표시
 	add_action('restrict_manage_posts', 'artwork_filter_custom_post_type_by_taxonomy');
 	function artwork_filter_custom_post_type_by_taxonomy() {
 		global $typenow;
@@ -198,8 +197,8 @@
 		};
 	}
 	
-	/* 관리자에서 분류별로 게시물 필터링 */
-	//add_filter('parse_query', 'artwork_convert_id_to_term_in_query');
+	// 관리자에서 분류별로 게시물 필터링
+	add_filter('parse_query', 'artwork_convert_id_to_term_in_query');
 	function artwork_convert_id_to_term_in_query($query) {
 		global $pagenow;
 		$post_type = 'artwork';				// 게시물 유형 변경
