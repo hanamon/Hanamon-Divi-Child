@@ -146,15 +146,19 @@ html.addHtmlScroll { overflow:hidden; }
 
 /* Mobile 사이드 메뉴 */
 .mobile-side-menu-container { display:none; z-index:3 !important; position:fixed !important; margin:0 !important; width:100% !important; height:100% !important; padding:0 !important; background:none !important; }
-.mobile-side-menu-container .mobile-side-bg-wrap   { z-index:1; position:absolute; top:0; left:0; width:100% !important; height:100% !important; max-width:100%; margin:0 !important; background:rgba(0,0,0,0.8) !important; }
-.mobile-side-menu-container .mobile-side-menu-wrap { z-index:2; position:absolute; top:0; right:0; width:80% !important; height:100%; padding:0 0 50px 0 !important; background:#f9f8f6; overflow-y:scroll; }
+.mobile-side-menu-container .mobile-side-bg-wrap   { z-index:1; position:absolute !important; top:0; left:0; width:100% !important; height:100% !important; max-width:100%; margin:0 !important; background:rgba(0,0,0,0.8) !important; }
+.mobile-side-menu-container .mobile-side-menu-wrap { z-index:2; position:absolute !important; top:0; right:0; width:80% !important; height:100%; padding:0 0 50px 0 !important; background:#f9f8f6; overflow-y:scroll; }
 /* Mobile 사이드 메뉴 : 검색 */
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-search-wrap { margin:30px 30px 0 30px !important; }
 /* Mobile 사이드 메뉴 : 메인 메뉴 */
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap { padding:0 30px 10px 30px; margin-bottom:0 !important; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass { padding:0 !important; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass li { position:relative; }
-.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass>li>a { display:block; font-size:17px; color:#718096; padding:10px 0; border-bottom:1px solid #efefef; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass>li>a { display:block; font-size:17px; color:#718096 !important; padding:10px 0; border-bottom:1px solid #efefef; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass>li>a[aria-current] { color:#5A69EB !important; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass>li>a img { height:20px; vertical-align:middle; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass>li>a span { height:18px; line-height:22px; vertical-align:middle; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass li span.appbarDownBtn:after { font-family:ETmodules; content:"3"; line-height:67px; padding:0 10px; font-size:30px; color:#000; z-index:2; position:absolute; top:0; right:0; display:block; clear:both; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass li span.appbarDownBtn:after { font-family:ETmodules; content:"3"; line-height:67px; padding:0 10px; font-size:30px; color:#000; z-index:2; position:absolute; top:0; right:0; display:block; clear:both; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass li span.appbarDownBtn.addToggle:after { content:"2"; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu { display:none; padding:0 0 0 3px !important; border-bottom:1px solid #efefef; }
@@ -193,6 +197,9 @@ span.current-count:hover { color:#fff; background:#8D99FF; transition:all 0.3s; 
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:focus { color:#fff !important; background:#8D99FF; }
 
 /*------------------------- 반응형(플러그인 커스텀 제외) -------------------------*/
+@media all and ( max-width:1100px ){
+	.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass>li>a { font-size:14px; }
+}
 @media all and ( max-width:980px ){
 	.hidden-980 { display:none !important; }
 	.hidden.block-980 { display:block !important; }
