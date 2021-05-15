@@ -154,6 +154,10 @@ br.br-767 {
   display: none;
 }
 
+.displayInline {
+  display: inline-block;
+}
+
 .padding0 {
   padding: 0 !important;
 }
@@ -637,6 +641,21 @@ span.current-count:hover {
 }
 
 /*------------------------- 메인 -------------------------*/
+/* 메인 소개 섹션 */
+.main-section-image-container {
+  text-align: center;
+}
+.main-section-image-wrap {
+  display: inline-block;
+  width: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.main-section-image-wrap span {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 /* 블로그 모듈 */
 .blog-module-wrap.main-page .column {
   width: calc(50% - 24px) !important;
