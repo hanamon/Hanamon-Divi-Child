@@ -87,6 +87,27 @@
 
 ?>
 
+<?php // 블로그 전체 글 카운트 숏코드
+
+	add_action('template_redirect', 'blog_count');
+	function blog_count() {
+		global $blog_current_count;
+		$blog_current_count = wp_count_posts( "post" )->publish;
+	}
+
+	// 카운트 숏코드 사용
+	add_shortcode('blog_count', 'print_blog_count');
+	function print_blog_count( $atts, $content = null ) {
+		global $blog_current_count;
+		if( $blog_current_count === 0 ){
+			return false;
+		} else {
+			return "<span class='current-count'>$blog_current_count</span>";
+		}
+	}
+
+?>
+
 <?php // 카테고리 카운트 숏코드
 
 	// 카테고리 카운트
