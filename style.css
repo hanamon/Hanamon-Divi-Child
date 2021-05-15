@@ -130,6 +130,34 @@ a[aria-current] {
   color: #5a69eb !important;
 }
 
+/* 버튼 */
+#page-container button,
+#page-container .et_pb_button {
+  font-family: "notokr";
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 100% !important;
+  color: #4a5568 !important;
+  padding: 20px 30px !important;
+  border: 0 !important;
+  border-radius: 5px !important;
+  background: #dfe5ed !important;
+  transition: none;
+  transition: color 0.2s, background 0.2s;
+}
+#page-container button:hover,
+#page-container .et_pb_button:hover {
+  color: #fff !important;
+  background: #8d99ff !important;
+  transition: color 0.2s, background 0.2s;
+}
+
+/* 댓글 */
+#page-container #commentform,
+#page-container p.form-submit {
+  padding: 0 !important;
+}
+
 /*------------------------- 에드클레스 -------------------------*/
 .floatclear:after {
   display: block;
@@ -665,10 +693,10 @@ span.current-count:hover {
 /* 위젯 : 카테고리 */
 .et_pb_widget li {
   font-size: 14px;
-  line-height: 100%;
+  line-height: 120%;
   color: #718096;
   font-weight: 600;
-  padding: 15px;
+  padding: 10px 15px;
   background: #fff;
   border-radius: 3px;
   box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 5%);
@@ -685,6 +713,26 @@ span.current-count:hover {
 }
 .et_pb_widget li:hover a {
   color: #fff !important;
+  transition: all 0.3s;
+}
+
+/*------------------------- 게시물 -------------------------*/
+.post-taxonomy-module-wrap a {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568 !important;
+  line-height: 120%;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  margin: 4px 2px;
+  transition: all 0.3s;
+}
+.post-taxonomy-module-wrap a:hover,
+.post-taxonomy-module-wrap a:focus {
+  color: #fff !important;
+  background: #8d99ff;
   transition: all 0.3s;
 }
 
