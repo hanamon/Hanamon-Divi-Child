@@ -87,35 +87,25 @@
 
 ?>
 
-<?php // 블로그 전체 글 카운트 숏코드
+<?php // 포스트 타입별 전체 글 카운트 숏코드
 
-	add_action('template_redirect', 'blog_count');
-	function blog_count() {
-		global $blog_current_count;
-		$blog_current_count = wp_count_posts( "post" )->publish;
-	}
-
-	// 카운트 숏코드 사용
-	add_shortcode('blog_count', 'print_blog_count');
-	function print_blog_count( $atts, $content = null ) {
-		global $blog_current_count;
-		if( $blog_current_count === 0 ){
-			return false;
-		} else {
-			return "<span class='current-count'>$blog_current_count</span>";
-		}
+	// 작품이면 작품이란 포스트 타입의 개수를 반환해야한다.
+	add_shortcode('post_type_count', 'print_post_type_count');
+	function print_post_type_count( $atts, $content = null ) {
+		// [post_type_count type="artwork"]이런식으로 사용할 수 있다.
+		extract(shortcode_atts(array( 'type' => null ), $atts));
+		$post_type_current_count = wp_count_posts( $type )->publish;
+		return "<span class='current-count'>$post_type_current_count</span>";
 	}
 
 ?>
 
-<?php // 카테고리 카운트 숏코드
+<?php // 카테고리 카운트 숏코드 (현재 카테고리를 찾아 포함된 게시글 개수를 반환한다.)
 
-	// 카테고리 카운트
-	add_action('template_redirect', 'category_count');
-	function category_count(){		
+	// 카운트 숏코드 사용
+	add_shortcode('category_count', 'print_category_count');
+	function print_category_count( $atts, $content = null ) {
 		global $wp_query;
-		global $current_count;
-		
 		$current_object = $wp_query->queried_object;
 
 		if( array_key_exists('queried_object', $wp_query) ){			
@@ -131,17 +121,7 @@
 			
 			}	
 		}
-	}
-		
-	// 카운트 숏코드 사용
-	add_shortcode('category_count', 'print_category_count');
-	function print_category_count( $atts, $content = null ) {
-		global $current_count;
-		if( $current_count == '' ){
-			return false;
-		} else {
-			return "<span class='current-count'>$current_count</span>";
-		}
+		return "<span class='current-count'>$current_count</span>";
 	}
 
 ?>
