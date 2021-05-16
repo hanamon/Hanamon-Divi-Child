@@ -131,7 +131,7 @@ a[aria-current] {
 }
 
 /* 버튼 */
-#page-container button,
+#page-container .comment-respond button,
 #page-container .et_pb_button {
   font-family: "notokr";
   font-size: 20px !important;
@@ -145,7 +145,7 @@ a[aria-current] {
   transition: none;
   transition: color 0.2s, background 0.2s;
 }
-#page-container button:hover,
+#page-container .comment-respond button:hover,
 #page-container .et_pb_button:hover {
   color: #fff !important;
   background: #8d99ff !important;
@@ -153,9 +153,31 @@ a[aria-current] {
 }
 
 /* 댓글 */
+#page-container #comment-wrap h1 {
+  padding-bottom: 20px;
+}
+#page-container .comment-body {
+  margin-bottom: 20px;
+}
+#page-container #respond {
+  padding: 20px 0 0 0;
+}
+#page-container .comment #respond {
+  padding: 10px 0 0 0;
+  margin: 0 0 20px 0;
+}
 #page-container #commentform,
 #page-container p.form-submit {
   padding: 0 !important;
+}
+#page-container #commentform input,
+#page-container #commentform textarea {
+  border-radius: 5px;
+  background: #f6f9fb;
+}
+#page-container .et_pb_button.comment-reply-link {
+  font-size: 16px !important;
+  padding: 10px 20px !important;
 }
 
 /*------------------------- 에드클레스 -------------------------*/
@@ -567,7 +589,7 @@ html.addHtmlScroll {
   margin-bottom: 24px !important;
   padding: 0 !important;
   transition: all 0.2s !important;
-  border: 0;
+  border: 0 !important;
   border-radius: 1rem;
 }
 .blog-module-wrap .column article:hover {
