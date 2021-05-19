@@ -669,7 +669,7 @@ span.current-count:hover {
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:hover,
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:focus {
   color: #fff !important;
-  background: #8d99ff;
+  background: #8d99ff !important;
 }
 
 /* 작업 */
