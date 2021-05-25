@@ -10,9 +10,7 @@ Template: Divi
 
 /*------------------------- 크로스 브라우징 IE -------------------------*/
 @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .et_animated {
-    opacity: 1 !important;
-  }
+  .et_animated { opacity: 1 !important; }
 }
 
 /*------------------------- 폰트 ------------------------------*/
@@ -67,68 +65,27 @@ Template: Divi
 }
 
 /*------------------------- 초기화 -------------------------*/
-* {
-  word-break: keep-all;
-  font-family: "notokr";
-}
-html,
-body {
-  font-family: "notokr" !important;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "notokr" !important;
-}
-p,
-ul,
-li,
-div {
-  font-family: "notokr" !important;
-}
-i,
-em,
-address {
-  font-style: normal;
-}
-strong {
-  font-weight: 600;
-}
+* { word-break: keep-all; font-family: "notokr"; }
+html, body { font-family: "notokr" !important; }
+h1, h2, h3, h4, h5, h6 { font-family: "notokr" !important; }
+p, ul, li, div { font-family: "notokr" !important; }
+i, em, address { font-style: normal; }
+strong { font-weight: 600; }
 
-#page-container {
-  overflow: hidden;
-}
-#page-container > div > header {
-  z-index: 2;
-}
-#page-container > div > #et-main-area {
-  z-index: 1;
-}
-#page-container > div > #et-main-area #main-content {
-  z-index: 2;
-  background: #f7f9fb;
-}
-#page-container > div > #et-main-area footer {
-  z-index: 1;
-}
+#page-container { overflow: hidden; }
+#page-container > div > header { z-index: 2; }
+#page-container > div > #et-main-area { z-index: 1; }
+#page-container > div > #et-main-area #main-content { z-index: 2; background: #f7f9fb; }
+#page-container > div > #et-main-area footer { z-index: 1; }
 
 #page-container input,
 #page-container label,
 #page-container select,
-#page-container textarea {
-  font-family: "notokr" !important;
-}
+#page-container textarea { font-family: "notokr" !important; }
 
-#page-container > div > #et-main-area a {
-  font-family: "notokr" !important;
-}
+#page-container > div > #et-main-area a { font-family: "notokr" !important; }
 
-a[aria-current] {
-  color: #5a69eb !important;
-}
+a[aria-current] { color: #5a69eb !important; }
 
 /* 버튼 */
 #page-container .comment-respond button,
@@ -701,10 +658,7 @@ span.current-count:hover {
   border-radius: 50%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
-.main-section-image-wrap span {
-  border-radius: 50%;
-  overflow: hidden;
-}
+.main-section-image-wrap span { border-radius: 50%; overflow: hidden; }
 
 /* 블로그 모듈 */
 .blog-module-wrap.main-page .column {
@@ -760,43 +714,20 @@ span.current-count:hover {
 
 /*------------------------- 반응형(플러그인 커스텀 제외) -------------------------*/
 @media all and (max-width: 1100px) {
-  .pc-header-wrap
-    .pc-header-col-wrap
-    .pc-header-menu-wrap
-    .myMenuClass
-    > li
-    > a {
-    font-size: 14px;
-  }
+  .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a { font-size: 14px; }
 }
 @media all and (max-width: 980px) {
-  .hidden-980 {
-    display: none !important;
-  }
-  .hidden.block-980 {
-    display: block !important;
-  }
-  br.br-980 {
-    display: block;
-  }
+  .hidden-980 { display: none !important; }
+  .hidden.block-980 { display: block !important; }
+  br.br-980 { display: block; }
   /* 서브 : 블로그 */
-  .blog-module-wrap .column {
-    width: calc(50% - 16px) !important;
-  }
-  .blog-module-wrap .column:nth-child(2n) {
-    margin-right: 0 !important;
-  }
+  .blog-module-wrap .column { width: calc(50% - 16px) !important; }
+  .blog-module-wrap .column:nth-child(2n) { margin-right: 0 !important; }
 }
 @media all and (max-width: 767px) {
-  .hidden-767 {
-    display: none !important;
-  }
-  .hidden.block-767 {
-    display: block !important;
-  }
-  br.br-767 {
-    display: block;
-  }
+  .hidden-767 { display: none !important; }
+  .hidden.block-767 { display: block !important; }
+  br.br-767 { display: block; }
   /* 서브 : 블로그 */
   .blog-module-wrap .column {
     width: 100% !important;
@@ -804,27 +735,18 @@ span.current-count:hover {
   .blog-module-wrap .column:nth-child(1n) {
     margin-right: 0 !important;
   }
-  .blog-module-wrap .column article {
-    margin-bottom: 15px !important;
-  }
+  .blog-module-wrap .column article { margin-bottom: 15px !important; }
   .blog-module-wrap .column article h2.entry-title {
     padding: 20px 20px 0 20px !important;
     margin-bottom: 10px;
     font-weight: 600;
   }
-  .blog-module-wrap .column article p.post-meta {
-    padding: 0 20px 0 20px !important;
-    margin-bottom: 10px;
+  .blog-module-wrap .column article p.post-meta { padding: 0 20px 0 20px !important; margin-bottom: 10px;
   }
-  .blog-module-wrap .column article div.post-content {
-    padding: 0 20px 20px 20px !important;
-  }
+  .blog-module-wrap .column article div.post-content { padding: 0 20px 20px 20px !important; }
   /* 메인 블로그 모듈 */
   /* 블로그 모듈 */
-  .blog-module-wrap.main-page .column {
-    width: 100% !important;
-    margin-right: 24px !important;
-  }
+  .blog-module-wrap.main-page .column { width: 100% !important; margin-right: 24px !important; }
 }
 
 /**-----------------------------------------
@@ -860,10 +782,7 @@ span.current-count:hover {
   background: #8d99ff;
   transition: all 0.3s;
 }
-.wp-pagenavi span.current {
-  color: #fff !important;
-  background: #718096;
-}
+.wp-pagenavi span.current { color: #fff !important; background: #718096; }
 
 /**-----------------------------------------
  *
@@ -872,8 +791,11 @@ span.current-count:hover {
  *
  *
 -----------------------------------------**/
-.enlighter-default {
-  padding: 15px 0 !important;
-}
+#page-container .enlighter span { text-shadow: 0 1px #fff; }
+#page-container div.enlighter>div:nth-child(even) { background:#F4F2F0; }
+#page-container div.enlighter>div::before { width:35px; min-width:35px; }
+#page-container .enlighter-text { color:#333; }
+div.enlighter>div:first-child>div { padding-top:10px; }
+div.enlighter>div:last-child>div { padding-bottom:10px; }
 
 /*------------------------- The End -------------------------*/
