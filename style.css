@@ -1,10 +1,10 @@
 /*======================================
 Theme Name: 하나몬
-Theme URI: https://parkhana.com
-Description: 하나몬(https://parkhana.com) 사이트를 위한 디비 자식 테마입니다.
-Version: 1.0
+Theme URI: https://hanamon.com
+Description: 하나몬(https://hanamon.com) 사이트를 위한 디비 자식 테마입니다.
+Version: 1.0.1
 Author: 하나몬
-Author URI: https://parkhana.com
+Author URI: https://hanamon.com
 Template: Divi
 ======================================*/
 
@@ -104,11 +104,7 @@ a[aria-current] { color: #5a69eb !important; }
   transition: color 0.2s, background 0.2s;
 }
 #page-container .comment-respond button:hover,
-#page-container .et_pb_button:hover {
-  color: #fff !important;
-  background: #8d99ff !important;
-  transition: color 0.2s, background 0.2s;
-}
+#page-container .et_pb_button:hover { color: #fff !important; background: #8d99ff !important; transition: color 0.2s, background 0.2s; }
 
 /* 댓글 */
 #page-container #comment-wrap h1 { padding-bottom: 20px; }
@@ -140,12 +136,7 @@ br.br-767 { display: none; }
 
 /*------------------------- 공통 -------------------------*/
 /* 검색 모듈 공통 */
-html #page-container .mobile-search-wrap {
-  padding: 0 15px;
-  border: 0 !important;
-  border-radius: 4px !important;
-  background: #e2e8f0;
-}
+html #page-container .mobile-search-wrap { padding: 0 15px; border: 0 !important; border-radius: 4px !important; background: #e2e8f0; }
 html #page-container .mobile-search-wrap input.et_pb_s {
   font-family: "notokr" !important;
   padding: 8px 8px 8px 24px !important;
@@ -187,60 +178,21 @@ html.addHtmlScroll { overflow: hidden; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li { display: inline-block; margin-left: 15px; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li:first-child { margin: 0; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a { display: block; font-size: 16px; color: #718096 !important; line-height: 180%; font-weight: 600; }
-.pc-header-wrap
-  .pc-header-col-wrap
-  .pc-header-menu-wrap
-  .myMenuClass
-  > li
-  > a:hover,
-.pc-header-wrap
-  .pc-header-col-wrap
-  .pc-header-menu-wrap
-  .myMenuClass
-  > li
-  > a:focus,
-.pc-header-wrap
-  .pc-header-col-wrap
-  .pc-header-menu-wrap
-  .myMenuClass
-  > li
-  > a[aria-current] {
-  color: #5a69eb !important;
-}
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a:hover,
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a:focus,
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a[aria-current] { color: #5a69eb !important; }
 
 /* Mobile */
 .mobile-header-container { padding: 20px 0 !important; }
-.mobile-header-container .mobile-header-col-wrap {
-  width: 100% !important;
-  padding: 0 15px !important;
-  line-height: 0 !important;
-}
+.mobile-header-container .mobile-header-col-wrap { width: 100% !important; padding: 0 15px !important; line-height: 0 !important; }
 /* Mobile : 로고 */
 .mobile-header-container .mobile-header-col-wrap .mobile-header-logo-wrap { display: inline-block; }
 .mobile-header-container .mobile-header-col-wrap .mobile-header-logo-wrap img { width: auto; height: 30px; }
 /* Mobile : 앱바 */
-.mobileAppbarBtn-wrap {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  line-height: 0;
-  transform: translate(0, -50%);
-  margin: 0 !important;
-}
+.mobileAppbarBtn-wrap { position: absolute; right: 0; top: 50%; line-height: 0; transform: translate(0, -50%); margin: 0 !important; }
 .mobileAppbarBtn-wrap a.mobileAppbarBtn { display: inline-block; }
-.mobileAppbarBtn-wrap a.mobileAppbarBtn span {
-  position: relative;
-  display: block;
-  width: 22px;
-  height: 18px;
-}
-.mobileAppbarBtn-wrap a.mobileAppbarBtn span i {
-  position: absolute;
-  display: block;
-  height: 2px;
-  border-radius: 2px;
-  background: #718096;
-}
+.mobileAppbarBtn-wrap a.mobileAppbarBtn span { position: relative; display: block; width: 22px; height: 18px; }
+.mobileAppbarBtn-wrap a.mobileAppbarBtn span i { position: absolute; display: block; height: 2px; border-radius: 2px; background: #718096; }
 .mobileAppbarBtn-wrap a.mobileAppbarBtn span i:nth-child(1) { width: 100%; position: relative; top: 0; }
 .mobileAppbarBtn-wrap a.mobileAppbarBtn span i:nth-child(2) { width: 75%; right: 0; top: 50%; transform: translate(0, -50%); }
 .mobileAppbarBtn-wrap a.mobileAppbarBtn span i:nth-child(3) { width: 60%; bottom: 0; }
@@ -385,30 +337,9 @@ html.addHtmlScroll { overflow: hidden; }
   padding: 0 0 0 3px !important;
   border-bottom: 1px solid #efefef;
 }
-.mobile-side-menu-container
-  .mobile-side-menu-wrap
-  .mobile-side-main-menu-wrap
-  .myMenuClass
-  .sub-menu
-  li {
-  margin-top: 15px;
-}
-.mobile-side-menu-container
-  .mobile-side-menu-wrap
-  .mobile-side-main-menu-wrap
-  .myMenuClass
-  .sub-menu
-  li:first-child {
-  margin-top: 25px;
-}
-.mobile-side-menu-container
-  .mobile-side-menu-wrap
-  .mobile-side-main-menu-wrap
-  .myMenuClass
-  .sub-menu
-  li:last-child {
-  margin-bottom: 25px;
-}
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li { margin-top: 15px; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li:first-child { margin-top: 25px; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li:last-child { margin-bottom: 25px; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li a { font-size: 16px; font-weight: 400;color: #444 !important; }
 
 /*------------------------- 서브 -------------------------*/
@@ -428,25 +359,8 @@ html.addHtmlScroll { overflow: hidden; }
 .blog-module-wrap .column article div.post-content p { word-break: break-all !important; }
 
 /* 블로그 : 숏코드 */
-span.current-count {
-  font-family: "notokr" !important;
-  display: inline-block;
-  font-size: 24px;
-  color: #8d99ff;
-  font-weight: 600;
-  vertical-align: middle;
-  padding: 2.5px 10px;
-  margin-top: 2.5px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.3s;
-}
-span.current-count:hover {
-  color: #fff;
-  background: #8d99ff;
-  transition: all 0.3s;
-}
+span.current-count { font-family: "notokr" !important; display: inline-block; font-size: 24px; color: #8d99ff; font-weight: 600; vertical-align: middle; padding: 2.5px 10px; margin-top: 2.5px; border-radius: 5px; background: #fff; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05); transition: all 0.3s; }
+span.current-count:hover { color: #fff; background: #8d99ff; transition: all 0.3s; }
 
 /* 블로그 : 디비 */
 #page-container .et_pb_title_meta_container a:hover { color: #5a69eb !important; }
@@ -533,9 +447,25 @@ span.current-count:hover {
 -----------------------------------------**/
 #page-container .enlighter span { text-shadow: 0 1px #fff; }
 #page-container div.enlighter>div:nth-child(even) { background:#F4F2F0; }
+#page-container div.enlighter>div:nth-child(even):hover { background:#ddf0dd; }
 #page-container div.enlighter>div::before { width:35px; min-width:35px; }
 #page-container .enlighter-text { color:#333; }
 div.enlighter>div:first-child>div { padding-top:10px; }
 div.enlighter>div:last-child>div { padding-bottom:10px; }
+
+/**-----------------------------------------
+ *
+ *
+ * Link Preview 플러그인 커스텀 CSS
+ *
+ *
+-----------------------------------------**/
+.vlp-layout-zone-side { width:40% !important; }
+.vlp-layout-zone-side > div { height: 100% !important; }
+.vlp-layout-zone-side > div img { max-width:100% !important; max-height:100% !important; border-radius:5px !important; }
+
+@media all and (max-width: 450px) {
+  .vlp-layout-zone-side { width:100% !important; }
+}
 
 /*------------------------- The End -------------------------*/
