@@ -1,10 +1,10 @@
 /*======================================
 Theme Name: 하나몬
-Theme URI: https://hanamon.com
-Description: 하나몬(https://hanamon.com) 사이트를 위한 디비 자식 테마입니다.
-Version: 1.0.1
+Theme URI: https://hanamon.kr
+Description: 하나몬(https://hanamon.kr) 사이트를 위한 디비 자식 테마입니다.
+Version: 1.0.2
 Author: 하나몬
-Author URI: https://hanamon.com
+Author URI: https://hanamon.kr
 Template: Divi
 ======================================*/
 
@@ -72,6 +72,7 @@ p, ul, li, div { font-family: "notokr" !important; }
 i, em, address { font-style: normal; }
 strong { font-weight: 600; }
 code { font-weight:600; color:red; background:#eee; padding:3px; padding:2px 4px; }
+hr { border: 1px solid #eee; }
 
 #page-container { overflow: hidden; }
 #page-container > div > header { z-index: 2; }
@@ -320,23 +321,8 @@ html.addHtmlScroll { overflow: hidden; }
   display: block;
   clear: both;
 }
-.mobile-side-menu-container
-  .mobile-side-menu-wrap
-  .mobile-side-main-menu-wrap
-  .myMenuClass
-  li
-  span.appbarDownBtn.addToggle:after {
-  content: "2";
-}
-.mobile-side-menu-container
-  .mobile-side-menu-wrap
-  .mobile-side-main-menu-wrap
-  .myMenuClass
-  .sub-menu {
-  display: none;
-  padding: 0 0 0 3px !important;
-  border-bottom: 1px solid #efefef;
-}
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass li span.appbarDownBtn.addToggle:after { content: "2"; }
+.mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu { display: none; padding: 0 0 0 3px !important; border-bottom: 1px solid #efefef; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li { margin-top: 15px; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li:first-child { margin-top: 25px; }
 .mobile-side-menu-container .mobile-side-menu-wrap .mobile-side-main-menu-wrap .myMenuClass .sub-menu li:last-child { margin-bottom: 25px; }
