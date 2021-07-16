@@ -451,6 +451,7 @@ div.enlighter>div:last-child>div { padding-bottom:10px; }
 .vlp-layout-zone-side > div img { max-width:100% !important; max-height:100% !important; border-radius:5px !important; }
 .vlp-layout-2-columns .vlp-layout-zone-main { width:60%; }
 .vlp-layout-2-columns .vlp-block-2 { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vlp-layout-custom-template .vlp-layout-zone-main { overflow: hidden; }
 
 @media all and (max-width: 450px) {
   .vlp-layout-zone-side { width:100% !important; }
