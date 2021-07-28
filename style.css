@@ -446,11 +446,11 @@ div.enlighter>div:last-child>div { padding-bottom:10px; }
  *
  *
 -----------------------------------------**/
-.vlp-layout-zone-side { width:40% !important; max-height:200px; overflow:hidden; }
-.vlp-layout-zone-side > div { height: auto !important; }
-.vlp-layout-zone-side > div img { max-width:100% !important; max-height:100% !important; border-radius:5px !important; }
-.vlp-layout-2-columns .vlp-layout-zone-main { width:60%; }
-.vlp-layout-2-columns .vlp-block-2 { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vlp-layout-zone-side { display:flex; align-items:center; width:40% !important; max-height:200px; overflow:hidden; }
+.vlp-layout-custom-template .vlp-link-title,
+.vlp-layout-custom-template .vlp-link-url { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vlp-layout-custom-template .vlp-link-summary { margin-bottom: 10px; }
+.vlp-layout-custom-template .vlp-layout-zone-main { overflow: hidden; flex: 1 auto !important; }
 
 @media all and (max-width: 450px) {
   .vlp-layout-zone-side { width:100% !important; }
