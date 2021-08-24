@@ -350,7 +350,8 @@ span.current-count:hover { color: #fff; background: #8d99ff; transition: all 0.3
 
 /* 블로그 : 디비 */
 #page-container .et_pb_title_meta_container a:hover { color: #5a69eb !important; }
-#page-container .et_pb_title_featured_container img { border-radius: 1rem; }
+#page-container .et_pb_title_featured_container span { text-align: center; }
+#page-container .et_pb_title_featured_container span img { width:auto; height:auto; max-height:350px; border-radius: 1rem; }
 #page-container .et_pb_widget.widget_tag_cloud { width: 100% !important; margin: 0 !important; }
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a { line-height: 30px; padding: 0 15px; color: #4a5568; background: #e2e8f0; margin: 4px 2px; }
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:hover,
