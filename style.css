@@ -2,7 +2,7 @@
 Theme Name: 하나몬
 Theme URI: https://hanamon.kr
 Description: 하나몬(https://hanamon.kr) 사이트를 위한 디비 자식 테마입니다.
-Version: 1.0.2
+Version: 1.0.3
 Author: 하나몬
 Author URI: https://hanamon.kr
 Template: Divi
@@ -352,7 +352,7 @@ span.current-count:hover { color: #fff; background: #8d99ff; transition: all 0.3
 #page-container .et_pb_title_meta_container a:hover { color: #5a69eb !important; }
 #page-container .et_pb_title_featured_container img { border-radius: 1rem; }
 #page-container .et_pb_widget.widget_tag_cloud { width: 100% !important; margin: 0 !important; }
-#page-container .et_pb_widget.widget_tag_cloud .tagcloud a { line-height: 30px; padding: 0 15px; background: #e2e8f0; margin: 4px 2px; }
+#page-container .et_pb_widget.widget_tag_cloud .tagcloud a { line-height: 30px; padding: 0 15px; color: #4a5568; background: #e2e8f0; margin: 4px 2px; }
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:hover,
 #page-container .et_pb_widget.widget_tag_cloud .tagcloud a:focus { color: #fff !important; background: #8d99ff !important; }
 
@@ -418,7 +418,7 @@ span.current-count:hover { color: #fff; background: #8d99ff; transition: all 0.3
  *
  *
 -----------------------------------------**/
-.wp-pagenavi { display: table; border: 0; padding: 2.5px; margin: 60px auto 30px auto; text-align: center; background: #fff; border-radius: 5px; }
+.wp-pagenavi { display: inline-block; width:100%; padding: 2.5px; margin: 30px auto; text-align: center; }
 .wp-pagenavi a,
 .wp-pagenavi span { display: inline-block; margin: 2.5px; color: #718096 !important; font-weight: 500 !important; padding: 5px 10px; line-height: 25px; border-radius: 5px; background: #e2e8f0; transition: all 0.3s; }
 .wp-pagenavi a:hover { color: #fff !important; background: #8d99ff; transition: all 0.3s; }
