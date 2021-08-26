@@ -109,6 +109,9 @@ a[aria-current] { color: #5a69eb !important; }
 
 /* 댓글 */
 #page-container #comment-wrap h1 { padding-bottom: 20px; }
+#page-container #comment-wrap ol,
+#page-container #comment-wrap ul,
+#page-container #comment-wrap li { list-style: none; }
 #page-container .comment-body { margin-bottom: 20px; }
 #page-container #respond { padding: 20px 0 0 0; }
 #page-container .comment #respond { padding: 10px 0 0 0; margin: 0 0 20px 0; }
