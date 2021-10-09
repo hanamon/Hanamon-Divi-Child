@@ -130,35 +130,33 @@
 
 	// 포스트 타입 생성
 	add_action( 'init', 'add_artwork_post_type_fn' );
-	function add_artwork_post_type_fn() {
-	
+	function add_artwork_post_type_fn() {	
 		$type_artwork_labels = array(
-			'name'               => '작업',
-			'all_items'     	 => '모든 작업',
-			'add_new'            => '작업 생성',
-			'add_new_item'       => '작업 생성',
-			'edit_item'          => '작업 수정',
-			'search_items'       => '작업 검색',
-			'not_found'          => '작업이 없습니다.',
+			'name' => '작업',
+			'all_items' => '모든 작업',
+			'add_new' => '작업 생성',
+			'add_new_item' => '작업 생성',
+			'edit_item' => '작업 수정',
+			'search_items' => '작업 검색',
+			'not_found' => '작업이 없습니다.',
 			'not_found_in_trash' => '휴지통에 작업이 없습니다.',
-			'menu_name' 		 => '작업',
+			'menu_name' => '작업',
 		);
 		$type_board_args = array(
-			'labels'        		=> $type_artwork_labels,
-			'description'   		=> '작업 데이터 보관',
-			'public'        		=> true,
-			'publicly_queryable'	=> true,
-			'hierarchical'			=> true,
-			'menu_position' 		=> 5,
-			'supports'      		=> array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
-			'has_archive'   		=> true,
-			// 'show_ui'			=> false,
-			// 'show_in_menu'		=> false,
+			'labels' => $type_artwork_labels,
+			'description' => '작업 데이터 보관',
+			'public' => true,
+			'publicly_queryable' => true,
+			'hierarchical' => true,
+			'menu_position' => 5,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+			'has_archive' => true,
+			// 'show_ui' => false,
+			// 'show_in_menu' => false,
 		);
 	
 		// 포스트 타입 생성
-		register_post_type( 'artwork', $type_board_args );
-	
+		register_post_type( 'artwork', $type_board_args );	
 	}
 	
 	// 페이지 포스트 타입에 '페이지 카테고리' 추가
@@ -181,8 +179,8 @@
 	add_action('restrict_manage_posts', 'artwork_filter_custom_post_type_by_taxonomy');
 	function artwork_filter_custom_post_type_by_taxonomy() {
 		global $typenow;
-		$post_type = 'artwork'; 			// 게시물 유형 변경
-		$taxonomy  = 'artwork-category'; 	// 분류법 변경
+		$post_type = 'artwork'; // 게시물 유형 변경
+		$taxonomy  = 'artwork-category'; // 분류법 변경
 		if ($typenow == $post_type) {
 			$selected      = isset($_GET[$taxonomy]) ? $_GET[$taxonomy] : '';
 			$info_taxonomy = get_taxonomy($taxonomy);
@@ -202,8 +200,8 @@
 	add_filter('parse_query', 'artwork_convert_id_to_term_in_query');
 	function artwork_convert_id_to_term_in_query($query) {
 		global $pagenow;
-		$post_type = 'artwork';				// 게시물 유형 변경
-		$taxonomy  = 'artwork-category'; 	// 분류법 변경
+		$post_type = 'artwork'; // 게시물 유형 변경
+		$taxonomy  = 'artwork-category'; // 분류법 변경
 		$q_vars    = &$query->query_vars;
 		if ( $pagenow == 'edit.php' && isset($q_vars['post_type']) && $q_vars['post_type'] == $post_type && isset($q_vars[$taxonomy]) && is_numeric($q_vars[$taxonomy]) && $q_vars[$taxonomy] != 0 ) {
 			$term = get_term_by('id', $q_vars[$taxonomy], $taxonomy);
