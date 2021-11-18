@@ -2,59 +2,17 @@
 Theme Name: 하나몬
 Theme URI: https://hanamon.kr
 Description: 하나몬(https://hanamon.kr) 사이트를 위한 디비 자식 테마입니다.
-Version: 1.0.4
+Version: 1.0.5
 Author: 하나몬
 Author URI: https://hanamon.kr
 Template: Divi
 ======================================*/
 
+@import url('./font.css');
+
 /*------------------------- 크로스 브라우징 IE -------------------------*/
 @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .et_animated { opacity: 1 !important; }
-}
-
-/*------------------------- 폰트 ------------------------------*/
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-black.woff2") format("woff2"), url("fonts/notosanskr-black.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-bold.woff2") format("woff2"), url("fonts/notosanskr-bold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-medium.woff2") format("woff2"), url("fonts/notosanskr-medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-regular.woff2") format("woff2"), url("fonts/notosanskr-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-demilight.woff2") format("woff2"), url("fonts/notosanskr-demilight.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-light.woff2") format("woff2"), url("fonts/notosanskr-light.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "notokr";
-  src: url("fonts/notosanskr-thin.woff2") format("woff2"), url("fonts/notosanskr-thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
 }
 
 /*------------------------- 초기화 -------------------------*/
@@ -312,6 +270,8 @@ div.enlighter>div:last-child>div { padding-bottom:10px; }
 .vlp-layout-custom-template .vlp-link-url { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .vlp-layout-custom-template .vlp-link-summary { margin-bottom: 10px; }
 .vlp-layout-custom-template .vlp-layout-zone-main { overflow: hidden; flex: 1 auto !important; }
+.vlp-layout-custom-template .vlp-link-image { width: 100%; height:100%; }
+.vlp-layout-custom-template img { min-width: 100% !important; max-height: 100% !important; }
 
 @media all and (max-width: 450px) {
   .vlp-layout-zone-side { width:100% !important; }
