@@ -2,7 +2,7 @@
 Theme Name: 하나몬
 Theme URI: https://hanamon.kr
 Description: 하나몬(https://hanamon.kr) 사이트를 위한 디비 자식 테마입니다.
-Version: 1.0.5
+Version: 1.0.6
 Author: 하나몬
 Author URI: https://hanamon.kr
 Template: Divi
@@ -100,10 +100,11 @@ html.addHtmlScroll { overflow: hidden; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass { text-align: right; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li { display: inline-block; margin-left: 15px; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li:first-child { margin: 0; }
-.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a { display: block; font-size: 16px; color: #718096 !important; line-height: 180%; font-weight: 600; }
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a { position: relative; display: block; font-size: 16px; color: #718096 !important; line-height: 180%; font-weight: 600; }
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a:hover,
 .pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a:focus,
-.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a[aria-current] { color: #5a69eb !important; }
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a[aria-current] {  color: #5a69eb !important; }
+.pc-header-wrap .pc-header-col-wrap .pc-header-menu-wrap .myMenuClass > li > a span { position:absolute; top: -65%; left: 50%; transform: translateX(-50%); border-radius: 2px; font-size: 12px; font-weight: 600; padding: 0 5px; line-height: 1.2rem; color: #fff; background: #fd0000; }
 
 /* Mobile */
 .mobile-header-container { padding: 20px 0 !important; }
